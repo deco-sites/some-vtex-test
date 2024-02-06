@@ -17,6 +17,7 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import SimilarSelector from "./ProductSimilarSelector.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -103,6 +104,7 @@ function ProductInfo({ page, layout }: Props) {
       </div>
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-6">
+        <SimilarSelector product={product} clientNav />
         <ProductSelector product={product} />
       </div>
       {/* Add to Cart and Favorites button */}
